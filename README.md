@@ -168,17 +168,42 @@ Professional Portfolio Webapp/
 
 ## ⚙️ Configuration
 
+
 ### Email Setup (Backend)
-Update `server/index.js` with your email credentials:
-```javascript
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'your-email@gmail.com',
-    pass: 'your-app-password'
-  }
-});
-```
+**Never commit your email credentials or secrets to GitHub!**
+
+Use environment variables to keep credentials safe:
+
+1. Create a `.env` file in your `server/` directory:
+   ```env
+   EMAIL_USER=your-email@gmail.com
+   EMAIL_PASS=your-app-password
+   ```
+
+2. Install `dotenv` in your server directory:
+   ```bash
+   npm install dotenv
+   ```
+
+3. Update `server/index.js` to use environment variables:
+   ```js
+   require('dotenv').config();
+   const transporter = nodemailer.createTransport({
+     service: 'gmail',
+     auth: {
+       user: process.env.EMAIL_USER,
+       pass: process.env.EMAIL_PASS
+     }
+   });
+   ```
+
+4. Add `.env` to your `.gitignore` file:
+   ```gitignore
+   # Sensitive environment variables
+   .env
+   ```
+
+**Always check your code for secrets before pushing to GitHub!**
 
 ### EmailJS Setup (Frontend)
 Configure EmailJS in `src/components/Contact.tsx` with your service credentials.
