@@ -154,7 +154,7 @@ export function Hero() {
                 className="relative z-10 rounded-2xl overflow-hidden shadow-2xl"
               >
                 <ImageWithFallback
-                  src={"/src/images/seif.jpeg"}
+                  src={"/seif.jpeg"}
                   alt="Seif developer portrait"
                   className="w-full h-[500px] object-cover"
                 />
