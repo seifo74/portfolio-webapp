@@ -73,32 +73,30 @@ export function About() {
               </motion.div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
-              <div className="w-full flex flex-col items-start mt-8">
-                  <div className="flex flex-col gap-2 bg-muted/20 p-4 rounded-xl shadow-sm">
-                    <div className="flex flex-row gap-3">
-                      {["React" ,"CSS" ,"Node.js" ,"TypeScript" ,"HTML" ,"JavaScript" ,"MySQL"].map((skill, index) => (
-                        <span
-                          key={skill}
-                          className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-2"
-                          style={{ animationDelay: `${0.4 + index * 0.05}s` }}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="flex flex-row gap-3">
-                      {["Python" ,"Figma" ,"Git" ,"MongoDB"].map((skill, index) => (
-                        <span
-                          key={skill}
-                          className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-2"
-                          style={{ animationDelay: `${0.65 + index * 0.05}s` }}
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+            <div className="mt-8">
+              <div className="bg-muted/20 p-4 rounded-xl shadow-sm">
+                <div className="flex flex-wrap gap-2 mb-2">
+                  {["React" ,"CSS" ,"Node.js" ,"TypeScript" ,"HTML" ,"JavaScript" ,"MySQL"].map((skill, index) => (
+                    <span
+                      key={skill}
+                      className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs sm:text-sm font-medium"
+                      style={{ animationDelay: `${0.4 + index * 0.05}s` }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {["Python" ,"Figma" ,"Git" ,"MongoDB"].map((skill, index) => (
+                    <span
+                      key={skill}
+                      className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs sm:text-sm font-medium"
+                      style={{ animationDelay: `${0.65 + index * 0.05}s` }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
